@@ -1,6 +1,9 @@
 package net.lilygabe.pombitemod;
 
 import com.mojang.logging.LogUtils;
+import net.lilygabe.pombitemod.item.ModCreativeModeTabs;
+import net.lilygabe.pombitemod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -26,10 +29,13 @@ public class PombiteMod {
     public PombiteMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
+        //modEventBus.addListener(this::addCreative);
 
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -39,9 +45,13 @@ public class PombiteMod {
     }
 
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
-    }
+    /*private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.POMBITE);
+            event.accept(ModItems.POMBITELITE);
+            event.accept(ModItems.RAW_POMBITELITE);
+        }
+    }*/
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
