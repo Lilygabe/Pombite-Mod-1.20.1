@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "pombitemod:block/deepslate_pombitelite_ore"
+  }
+}

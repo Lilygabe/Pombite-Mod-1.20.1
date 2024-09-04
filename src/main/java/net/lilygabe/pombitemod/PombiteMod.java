@@ -1,6 +1,7 @@
 package net.lilygabe.pombitemod;
 
 import com.mojang.logging.LogUtils;
+import net.lilygabe.pombitemod.block.ModBlocks;
 import net.lilygabe.pombitemod.item.ModCreativeModeTabs;
 import net.lilygabe.pombitemod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -31,6 +32,7 @@ public class PombiteMod {
 
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -43,7 +45,6 @@ public class PombiteMod {
     private void commonSetup(final FMLCommonSetupEvent event) {
 
     }
-
 
     /*private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {

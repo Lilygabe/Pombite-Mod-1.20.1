@@ -2,5 +2,10 @@
   "creativetab.pombite_tab": "Pombite Mod",
   "item.pombitemod.pombite": "Pombite",
   "item.pombitemod.pombitelite_dust": "Pombitelite Dust",
-  "item.pombitemod.raw_pombitelite": "Raw Pombitelite"
+  "item.pombitemod.raw_pombitelite": "Raw Pombitelite",
+
+  "block.pombitemod.pombitelite_dust_block": "Block of Pombitelite Dust",
+  "block.pombitemod.raw_pombitelite_block": "Block of Raw Pombitelite",
+  "block.pombitemod.pombitelite_ore": "Pombitelite Ore",
+  "block.pombitemod.deepslate_pombitelite_ore": "Deepslate Pombitelite Ore"
 }

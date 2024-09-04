@@ -1,6 +1,7 @@
 package net.lilygabe.pombitemod.item;
 
 import net.lilygabe.pombitemod.PombiteMod;
+import net.lilygabe.pombitemod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -24,6 +25,11 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.POMBITE.get());
                         output.accept(ModItems.POMBITELITE_DUST.get());
                         output.accept(ModItems.RAW_POMBITELITE.get());
+
+                        output.accept(ModBlocks.POMBITELITE_DUST_BLOCK.get());
+                        output.accept(ModBlocks.RAW_POMBITELITE_BLOCK.get());
+                        output.accept(ModBlocks.POMBITELITE_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_POMBITELITE_ORE.get());
                     })
                     .build());
 }
