@@ -26,6 +26,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.POMBITELITE_DUST.get());
                         output.accept(ModItems.RAW_POMBITELITE.get());
 
+                        output.accept(ModItems.ARCWEAVER.get());
+                        output.accept(ModItems.ARCWEAVER_FULL.get());
+
                         output.accept(ModBlocks.POMBITELITE_DUST_BLOCK.get());
                         output.accept(ModBlocks.RAW_POMBITELITE_BLOCK.get());
                         output.accept(ModBlocks.POMBITELITE_ORE.get());

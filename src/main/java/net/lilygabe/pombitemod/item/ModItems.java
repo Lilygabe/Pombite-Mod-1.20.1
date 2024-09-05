@@ -1,6 +1,7 @@
 package net.lilygabe.pombitemod.item;
 
 import net.lilygabe.pombitemod.PombiteMod;
+import net.lilygabe.pombitemod.item.custom.ArcweaverItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,6 +18,11 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_POMBITELITE = ITEMS.register("raw_pombitelite",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> ARCWEAVER = ITEMS.register("arcweaver",
+            () -> new ArcweaverItem(new Item.Properties(), 10_000));
+    public static final RegistryObject<Item> ARCWEAVER_FULL = ITEMS.register("arcweaver_full",
+            () -> new ArcweaverItem(new Item.Properties(), 10_000,10_000));
 
     public static void register (IEventBus eventBus){
         ITEMS.register(eventBus);
