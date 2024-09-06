@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_raw_pombitelite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pombitemod:raw_pombitelite"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pombitemod:pombitelite_dust_from_blasting_raw_pombitelite"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_pombitelite",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pombitemod:pombitelite_dust_from_blasting_raw_pombitelite"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "pombitelite",
+  "ingredient": {
+    "item": "pombitemod:deepslate_pombitelite_ore"
+  },
+  "result": "pombitemod:pombitelite_dust"
+}
