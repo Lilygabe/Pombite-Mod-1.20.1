@@ -2,8 +2,12 @@ package net.lilygabe.pombitemod;
 
 import com.mojang.logging.LogUtils;
 import net.lilygabe.pombitemod.block.ModBlocks;
+import net.lilygabe.pombitemod.block.entity.ModBlockEntities;
 import net.lilygabe.pombitemod.item.ModCreativeModeTabs;
 import net.lilygabe.pombitemod.item.ModItems;
+import net.lilygabe.pombitemod.screen.DirtCollapserScreen;
+import net.lilygabe.pombitemod.screen.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +37,9 @@ public class PombiteMod {
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -65,7 +72,7 @@ public class PombiteMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(ModMenuTypes.DIRT_COLLAPSER_MENU.get(), DirtCollapserScreen::new);
         }
     }
 }

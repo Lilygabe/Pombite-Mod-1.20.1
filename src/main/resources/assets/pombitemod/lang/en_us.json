@@ -10,5 +10,7 @@
   "block.pombitemod.pombitelite_dust_block": "Block of Pombitelite Dust",
   "block.pombitemod.raw_pombitelite_block": "Block of Raw Pombitelite",
   "block.pombitemod.pombitelite_ore": "Pombitelite Ore",
-  "block.pombitemod.deepslate_pombitelite_ore": "Deepslate Pombitelite Ore"
+  "block.pombitemod.deepslate_pombitelite_ore": "Deepslate Pombitelite Ore",
+
+  "block.pombitemod.dirt_collapser": "Dirt Collapser"
 }

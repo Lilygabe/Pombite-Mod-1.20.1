@@ -18,9 +18,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        //Materials
         this.dropSelf(ModBlocks.RAW_POMBITELITE_BLOCK.get());
         this.dropSelf(ModBlocks.POMBITELITE_DUST_BLOCK.get());
 
+        //Machines
+        this.dropSelf(ModBlocks.DIRT_COLLAPSER.get());
+
+        //Ores
         this.add(ModBlocks.POMBITELITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.POMBITELITE_ORE.get(), ModItems.RAW_POMBITELITE.get()));
         this.add(ModBlocks.DEEPSLATE_POMBITELITE_ORE.get(),

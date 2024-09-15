@@ -33,6 +33,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.RAW_POMBITELITE_BLOCK.get());
                         output.accept(ModBlocks.POMBITELITE_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_POMBITELITE_ORE.get());
+
+
+                        output.accept(ModBlocks.DIRT_COLLAPSER.get());
                     })
                     .build());
 }

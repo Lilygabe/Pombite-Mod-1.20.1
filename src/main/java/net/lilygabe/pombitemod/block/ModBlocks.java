@@ -1,6 +1,7 @@
 package net.lilygabe.pombitemod.block;
 
 import net.lilygabe.pombitemod.PombiteMod;
+import net.lilygabe.pombitemod.block.custom.DirtCollapserBlock;
 import net.lilygabe.pombitemod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -21,6 +22,8 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, PombiteMod.MOD_ID);
 
+
+
     public static final RegistryObject<Block> POMBITELITE_DUST_BLOCK = registerBlock("pombitelite_dust_block",
             () -> new FallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND)));
     public static final RegistryObject<Block> RAW_POMBITELITE_BLOCK = registerBlock("raw_pombitelite_block",
@@ -30,6 +33,11 @@ public class ModBlocks {
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DIAMOND_ORE), UniformInt.of(3,6)));
     public static final RegistryObject<Block> DEEPSLATE_POMBITELITE_ORE = registerBlock("deepslate_pombitelite_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_DIAMOND_ORE), UniformInt.of(3,6)));
+
+    public static final RegistryObject<Block> DIRT_COLLAPSER = registerBlock("dirt_collapser",
+            () -> new DirtCollapserBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)));
+
+
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

@@ -1,4 +1,6 @@
-// 1.20.1	2024-09-06T19:51:07.188619293	Tags for minecraft:block mod id pombitemod
+// 1.20.1	2024-09-15T19:22:37.138507554	Tags for minecraft:block mod id pombitemod
+5432f3557a4f2e6271de540ce256d6c232699778 data/forge/tags/blocks/ores.json
+b99ea29dc23562ba8cc6ab74389e9bb9d1a8d92e data/forge/tags/blocks/storage_blocks.json
 bd3fcda1065102ec9068c6198715b2f71484c77d data/minecraft/tags/blocks/mineable/pickaxe.json
 c92fc793fb2620e0171afbae0314cb5473bd9045 data/minecraft/tags/blocks/mineable/shovel.json
 bd3fcda1065102ec9068c6198715b2f71484c77d data/minecraft/tags/blocks/needs_iron_tool.json
