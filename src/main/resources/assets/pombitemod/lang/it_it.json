@@ -1,0 +1,16 @@
+{
+  "creativetab.pombite_tab": "Pombite Mod",
+  "item.pombitemod.pombite": "Pombite",
+  "item.pombitemod.pombitelite_dust": "Polvere di Pombitelite",
+  "item.pombitemod.raw_pombitelite": "Pombitelite Grezza",
+
+  "item.pombitemod.arcweaver": "Ifarco",
+  "item.pombitemod.arcweaver_full": "Ifarco",
+
+  "block.pombitemod.pombitelite_dust_block": "Blocco di Polvere di Pombitelite",
+  "block.pombitemod.raw_pombitelite_block": "Blocco di Pombitelite Grezza",
+  "block.pombitemod.pombitelite_ore": "Minerale di Pombitelite",
+  "block.pombitemod.deepslate_pombitelite_ore": "Minerale di Pombitelite in Ardesia Profonda",
+
+  "block.pombitemod.dirt_collapser": "Collassatore di Terra"
+}
