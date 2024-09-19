@@ -1,0 +1,12 @@
+{
+  "type": "pombitemod:dirt_collapsing",
+  "ingredients": [
+    {
+      "tag": "pombitemod:compostables"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:dirt"
+  }
+}

@@ -1,6 +1,7 @@
 package net.lilygabe.pombitemod.block.entity;
 
 import net.lilygabe.pombitemod.item.ModItems;
+import net.lilygabe.pombitemod.recipe.DirtCollapsingRecipe;
 import net.lilygabe.pombitemod.screen.DirtCollapserMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,6 +18,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -27,6 +29,8 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class DirtCollapserBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(2);
@@ -140,7 +144,9 @@ public class DirtCollapserBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private void craftItem() {
-        ItemStack result = new ItemStack(Items.DIRT, 1);
+        Optional<DirtCollapsingRecipe> recipe = getCurrentRecipe();
+        ItemStack result = recipe.get().getResultItem(null);
+
         this.itemHandler.extractItem(INPUT_SLOT,1, false);
 
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
@@ -148,13 +154,23 @@ public class DirtCollapserBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private boolean hasRecipe() {
-        //Hard coded for now
-        boolean hasCraftingItem = this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == Items.POTATO;
-        ItemStack result = new ItemStack(Items.DIRT);
+        Optional<DirtCollapsingRecipe> recipe = getCurrentRecipe();
 
-        return hasCraftingItem
-                && canInsertAmountIntoOutputSlot(result.getCount())
+        if(recipe.isEmpty()) return false;
+
+        ItemStack result = recipe.get().getResultItem(null);
+
+        return  canInsertAmountIntoOutputSlot(result.getCount())
                 && canInsertItemIntoOutputSlot(result.getItem());
+    }
+
+    private Optional<DirtCollapsingRecipe> getCurrentRecipe(){
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+
+        for(int i=0; i<itemHandler.getSlots(); i++)
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+
+        return this.level.getRecipeManager().getRecipeFor(DirtCollapsingRecipe.Type.INSTANCE, inventory, level);
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {

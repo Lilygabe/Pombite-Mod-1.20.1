@@ -5,13 +5,12 @@ import net.lilygabe.pombitemod.block.ModBlocks;
 import net.lilygabe.pombitemod.block.entity.ModBlockEntities;
 import net.lilygabe.pombitemod.item.ModCreativeModeTabs;
 import net.lilygabe.pombitemod.item.ModItems;
+import net.lilygabe.pombitemod.recipe.ModRecipes;
 import net.lilygabe.pombitemod.screen.DirtCollapserScreen;
 import net.lilygabe.pombitemod.screen.ModMenuTypes;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,6 +39,8 @@ public class PombiteMod {
 
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+
+        ModRecipes.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
